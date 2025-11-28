@@ -5,6 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgrey;
+}
+
+#root {
+  width: 100%;
+  max-width: 500px;
+  background-color: aliceblue;
 }
 
 code {
