@@ -1,0 +1,10 @@
+.total {
+  background-color: gold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.number {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
