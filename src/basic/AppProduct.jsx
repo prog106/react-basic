@@ -3,7 +3,7 @@ import './App.css';
 import Product from './components/Product';
 // import styles from './AppProduct.module.css';
 
-function AppCounter() {
+function AppProduct() {
   const [showProducts, setShowProducts] = useState(true);
   return (
     <div>
@@ -13,4 +13,4 @@ function AppCounter() {
   );
 }
 
-export default AppCounter;
+export default AppProduct;

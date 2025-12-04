@@ -1,8 +1,9 @@
+import React from 'react';
 import './App.css';
 import Avatar from './components/Avatar';
-import Profile from '../components/Profile';
+import Profile from './components/Profile';
 
-function AppPorfile() {
+function AppProfile() {
   const handleClick = (event) => {
     console.log(event);
     alert('click');
@@ -18,4 +19,4 @@ function AppPorfile() {
   );
 }
 
-export default AppPorfile;
+export default AppProfile;

@@ -8,11 +8,10 @@ export default function Product() {
   const handleChange = () => setChecked((prev) => !prev);
 
   useEffect(() => {
-    console.log(checked);
     fetch(`data/${!checked ? 'sale_' : ''}products.json`)
     .then(res => res.json())
     .then(data => {
-      console.log('세팅');
+      // console.log('세팅');
       setProducts(data);
     });
     return () => {

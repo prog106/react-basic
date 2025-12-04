@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import AppProfile from './AppProfile';
 // import AppCounter from './AppCounter';
-// import AppProduct from './basic/AppProduct';
-import AppXY from './AppXY';
+// import AppProduct from './AppProduct';
+// import AppXY from './AppXY';
+// import AppMentor from './AppMentor';
+// import AppMentors from './AppMentors';
+import AppMentorsReducer from './AppMentorsReducer';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +16,10 @@ root.render(
     {/* <AppProfile /> */}
     {/* <AppCounter /> */}
     {/* <AppProduct /> */}
-    <AppXY />
+    {/* <AppXY /> */}
+    {/* <AppMentor /> */}
+    {/* <AppMentors /> */}
+    <AppMentorsReducer />
   </React.StrictMode>
 );
 
