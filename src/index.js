@@ -8,6 +8,9 @@ import './index.css';
 // import AppMentor from './AppMentor';
 // import AppMentors from './AppMentors';
 import AppMentorsReducer from './AppMentorsReducer';
+import AppJumpGame from './AppJumpGame';
+// import AppForm from './AppForm';
+// import AppWrap from './AppWrap';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +23,9 @@ root.render(
     {/* <AppMentor /> */}
     {/* <AppMentors /> */}
     <AppMentorsReducer />
+    <AppJumpGame />
+    {/* <AppForm /> */}
+    {/* <AppWrap /> */}
   </React.StrictMode>
 );
 
