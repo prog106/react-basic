@@ -1,0 +1,252 @@
+:root {
+  --color-bg-dark: #bac1d1;
+}
+html.dark {
+  --color-bg-dark: #111827;
+}
+ul {
+  list-style: none;
+}
+/* 전체 레이아웃 */
+.todo-app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--color-bg-dark);
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(17, 24, 39, 0.92);
+  border-radius: 18px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(148, 163, 184, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 네비게이션 */
+.todo-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: radial-gradient(circle at top left, #4f46e5, #1e293b);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.todo-navbar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.todo-navbar-menu {
+  display: flex;
+  gap: 6px;
+}
+
+.todo-navbar-button {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.18s ease-out;
+}
+
+.todo-navbar-button:hover {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.todo-navbar-button.active {
+  background: #e5e7eb;
+  color: #111827;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.3),
+    0 8px 16px rgba(15, 23, 42, 0.55);
+}
+
+/* 리스트 영역 */
+.todo-main {
+  padding: 16px 18px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 340px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+}
+
+.todo-empty {
+  padding: 20px 12px 8px;
+  text-align: center;
+  font-size: 0.86rem;
+  color: #9ca3af;
+}
+
+/* 개별 아이템 */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+    border-color 0.12s ease-out, background-color 0.12s ease-out;
+}
+
+.todo-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.55);
+  border-color: rgba(129, 140, 248, 0.75);
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+.todo-label {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.todo-label.completed {
+  color: #6b7280;
+  text-decoration: line-through;
+}
+
+.todo-delete-button {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.12s ease-out, color 0.12s ease-out,
+    transform 0.1s ease-out;
+}
+
+.todo-delete-button:hover {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+  transform: translateY(-1px);
+}
+
+/* 입력 폼 */
+.todo-form {
+  padding: 10px 18px 16px;
+  border-top: 1px solid rgba(31, 41, 55, 0.9);
+  background: radial-gradient(circle at bottom, rgba(79, 70, 229, 0.16), transparent);
+}
+
+.todo-form-inner {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid rgba(75, 85, 99, 0.85);
+  background: rgba(15, 23, 42, 0.95);
+  padding: 9px 14px;
+  font-size: 0.88rem;
+  color: #e5e7eb;
+  outline: none;
+  transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out;
+}
+
+.todo-input::placeholder {
+  color: #6b7280;
+}
+
+.todo-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.7),
+    0 0 0 6px rgba(79, 70, 229, 0.25);
+  background: rgba(15, 23, 42, 0.98);
+}
+
+.todo-submit-button {
+  border-radius: 999px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.55);
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out,
+    filter 0.08s ease-out;
+}
+
+.todo-submit-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 26px rgba(79, 70, 229, 0.7);
+}
+
+.todo-submit-button:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.55);
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .todo-app {
+    padding: 24px 12px;
+  }
+
+  .todo-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+

@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import useProducts from '../../hooks/useProducts';
 // import styles from './Product.module.css';
 
 export default function Product() {
   const [count, setCount] = useState(0);
-  const [products, setProducts] = useState([]);
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const handleChange = () => setChecked((prev) => !prev);
+  const [ loading, products ] = useProducts({ checked }); // useProducts Hooks 생성
 
-  useEffect(() => {
-    fetch(`data/${!checked ? 'sale_' : ''}products.json`)
-    .then(res => res.json())
-    .then(data => {
-      // console.log('세팅');
-      setProducts(data);
-    });
-    return () => {
-      console.log('청소');
-    }
-  }, [checked]);
+  if(loading) return (<p>Loading</p>);
   return (
     <>
-      <input type="checkbox" id="sales" value={checked} onChange={handleChange}></input>
+      <input type="checkbox" id="sales" checked={checked} onChange={handleChange}></input>
       <label htmlFor="sales">HOT Sales!</label>
       <ul>
         {products.map((product) => (
